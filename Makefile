@@ -6,7 +6,7 @@
 #    By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/12 21:17:47 by dheredat          #+#    #+#              #
-#    Updated: 2019/11/17 17:12:15 by dheredat         ###   ########.fr        #
+#    Updated: 2019/11/18 20:52:36 by dheredat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,19 +14,20 @@ NAME			=	push_swap
 NAME_PS			=	push_swap
 NAME_CH			=	checker
 
-LIBFT_DIR	=	./libft
+LIBFT_DIR	=	./ft_printf
 SRC_DIR		=	./src
 INC_DIR		=	./inc
 OBJ_DIR		=	./obj
 
-F	=	-Wall -Wextra -Werror
+FLAGS	=	-Wall -Wextra -Werror
 
 PS_H	=	$(INC_DIR)/push_swap.h
 
 SRC	=	ch_act.c ch_act2.c ch_act3.c\
 		nbrs_check.c nbrs_valid.c\
 		tails.c\
-		solution.c price.c sort.c
+		solution.c price.c sort.c\
+		visualizer.c visualizer2.c visualizer3.c
 
 SRC_T		=	$(addprefix $(SRC_DIR)/,$(SRC))
 
@@ -36,7 +37,7 @@ PUSH_SWAP	=	push_swap.c
 OBJS			=	$(addprefix $(OBJ_DIR)/,$(SRC:%.c=%.o))
 PUSH_SWAP_OBJ	=	$(OBJ_DIR)/push_swap.o
 CHECKER_OBJ		=	$(OBJ_DIR)/checker.o
-LIBFT			=	$(LIBFT_DIR)/libft.a
+LIBFT			=	$(LIBFT_DIR)/libftprintf.a
 
 all: $(NAME)
 
@@ -44,7 +45,7 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 $(LIBFT):
-	@make -C libft
+	@make -C ft_printf
 
 $(NAME): $(LIBFT) $(OBJ_DIR) $(OBJS) $(PUSH_SWAP_OBJ) $(CHECKER_OBJ) $(PS_H)
 	@echo "\033[35mCompiling ./push_swap\033[0m"
@@ -58,12 +59,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@make -C libft clean
+	@make -C ft_printf clean
 
 fclean: clean
 	@rm -rf $(NAME_PS)
 	@rm -rf $(NAME_CH)
-	@make -C libft fclean
+	@make -C ft_printf fclean
 	@echo "\033[3;36mProject fully cleaned\033[0m"
 
 re: fclean all

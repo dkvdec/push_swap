@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/17 16:53:22 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/17 16:54:19 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/18 20:54:18 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int		find_near(int i)
 
 	j = 0;
 	max = 0;
+	i = 0;
 	while (j < t_a.sz_b)
 	{
 		if (t_a.ar_b[j] > t_a.ar_b[max])
@@ -83,7 +84,6 @@ int		count_price(int i, int j)
 void	count_proto(void)
 {
 	int i;
-	int j;
 
 	i = 0;
 	while (i < t_a.sz_a)

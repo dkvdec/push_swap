@@ -6,18 +6,18 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 21:16:12 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/17 16:18:08 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/18 19:37:47 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		get_nbrs(void)
+int		get_nbrs(int f)
 {
 	int i;
 	int j;
 
-	i = 1;
+	i = (f) ? 2 : 1;
 	j = 0;
 	while (i < t_a.gc)
 	{
@@ -29,11 +29,13 @@ int		get_nbrs(void)
 	return (0);
 }
 
-void	check_n_get_argv(void)
+void	check_n_get_argv(int f)
 {
 	int i;
 
-	if ((t_a.sz_m = count_nbrs()) < 0)
+	if (f)
+		f = check_options((*t_a.gv)[1], 0);
+	if ((t_a.sz_m = count_nbrs(f)) <= 0)
 		return (end_error());
 	if (!(t_a.ar_a = (int*)malloc(sizeof(int) * t_a.sz_m))
 	|| !(t_a.ar_b = (int*)malloc(sizeof(int) * t_a.sz_m)))
@@ -45,7 +47,7 @@ void	check_n_get_argv(void)
 		t_a.ar_b[i] = 0;
 	}
 	i = 0;
-	get_nbrs();
+	get_nbrs(f);
 }
 
 void	check_dupl(void)

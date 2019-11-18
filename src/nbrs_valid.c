@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:43:03 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/17 15:53:31 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/17 20:29:34 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,13 @@ int		line_pass(char *str)
 	return (nb_c);
 }
 
-int		count_nbrs(void)
+int		count_nbrs(int f)
 {
 	int i;
 	int tmp;
 	int nb_c;
 
-	i = 1;
+	i = (f) ? 2 : 1;
 	nb_c = 0;
 	while (i < t_a.gc)
 	{

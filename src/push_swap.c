@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 16:36:56 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/17 17:00:45 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/18 20:38:32 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int		main(int argc, char **argv)
 		t_a.gc = argc;
 		t_a.gv = &argv;
 		t_a.sz_m = 0;
-		check_n_get_argv();
+		check_n_get_argv(0);
 		check_dupl();
 		check_sort(1);
 		sort_core();

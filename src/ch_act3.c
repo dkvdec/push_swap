@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:28:28 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/14 21:05:18 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/18 21:43:05 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,34 +51,48 @@ void	act_rrr(int flag)
 void	exec_act(char *act)
 {
 	if (!(ft_strcmp(act, "sa")))
-		act_sa(0);
+		show_stacks_core("SA", act_sa, 0);
 	else if (!(ft_strcmp(act, "sb")))
-		act_sb(0);
+		show_stacks_core("SB", act_sb, 0);
 	else if (!(ft_strcmp(act, "ss")))
-		act_ss(0);
+		show_stacks_core("SS", act_ss, 0);
 	else if (!(ft_strcmp(act, "pa")))
-		act_pa(0);
+		show_stacks_core("PA", act_pa, 0);
 	else if (!(ft_strcmp(act, "pb")))
-		act_pb(0);
+		show_stacks_core("PB", act_pb, 0);
 	else if (!(ft_strcmp(act, "ra")))
-		act_ra(0);
+		show_stacks_core("RA", act_ra, 0);
 	else if (!(ft_strcmp(act, "rb")))
-		act_rb(0);
+		show_stacks_core("RB", act_rb, 0);
 	else if (!(ft_strcmp(act, "rr")))
-		act_rr(0);
+		show_stacks_core("RR", act_rr, 0);
 	else if (!(ft_strcmp(act, "rra")))
-		act_rra(0);
+		show_stacks_core("RRA", act_rra, 0);
 	else if (!(ft_strcmp(act, "rrb")))
-		act_rrb(0);
+		show_stacks_core("RRB", act_rrb, 0);
 	else if (!(ft_strcmp(act, "rrr")))
-		act_rrr(0);
+		show_stacks_core("RRR", act_rrr, 0);
 }
 
 void	spin_act(char **act)
 {
 	int i;
 
+	if (t_v.v)
+		show_stacks("ORG");
 	i = 0;
 	while (act[i])
+	{
+		t_v.c = i + 1;
 		exec_act(act[i++]);
+	}
+	i = 0;
+	while (act[i])
+	{
+		free(act[i]);
+		i++;
+	}
+	free(act);
+	if (t_v.v)
+		show_stacks("FNL");
 }

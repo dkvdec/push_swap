@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:22:57 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/17 15:26:37 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/18 20:52:03 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 # define PUSH_SWAP_H
 
 # define BUFF_SIZE 12
-
-# include "../libft/libft.h"
+# include "../ft_printf/inc/proto_vlst.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <limits.h>
 
 struct		s_a{
 	int		gc;
@@ -34,15 +36,39 @@ struct		s_p{
 }			t_p;
 
 /*
+** VISUALIZER OPTIONS
+**
+** v - visualizer on
+** t(empty/nbr) - time to wait(int)
+** h - head(counter in head)
+** b - bot(current action and <^>)
+** l - lock with colour target of last op
+*/
+
+struct		s_v{
+	int		v;
+	int		t;
+	int		h;
+	int		c;
+	char	*c_c;
+	int		b;
+	int		l;
+	int		ai;
+	int		aai;
+	int		bi;
+	int		bbi;
+}			t_v;
+
+/*
 ** NUMBERS CHECK_N_GET FUNCTIONS
 */
 
 int			exception_check(char *str, int i);
 int			nbr_check(char *str, int *i);
 int			line_pass(char *str);
-int			count_nbrs(void);
+int			count_nbrs(int f);
 int			grep_nbrs(char *str, int *j);
-int			get_nbrs(void);
+int			get_nbrs(int f);
 
 /*
 ** PROGRAM TAILS
@@ -56,7 +82,7 @@ void		end_ko(void);
 ** ADDITIONAL CHECK FUNCTIONS
 */
 
-void		check_n_get_argv(void);
+void		check_n_get_argv(int f);
 void		check_dupl(void);
 void		check_sort(int flag);
 int			check_act(char *act);
@@ -104,5 +130,25 @@ void		ext_rotate(void);
 void		sort_proto(void);
 void		collector(void);
 void		sort_core(void);
+
+/*
+** VISUALIZER
+*/
+
+void		show_head(void);
+void		get_symbols3(char ***ca, char ***cb, char *com);
+void		get_symbols2(char **ca, char **cb, char *com);
+void		get_symbols(char *ca, char *cb, char *com);
+void		show_bot(char *com);
+void		show_body(int i);
+void		get_mark2(void);
+void		get_mark(void);
+void		show_body_ext2(int i);
+void		show_body_ext(int i);
+void		show_stacks(char *com);
+void		show_stacks_core(char *com, void (*f)(int), int flag);
+void		reset_options(void);
+int			wait_options(char *str, int i);
+int			check_options(char *str, int i);
 
 #endif
