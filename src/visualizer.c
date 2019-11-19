@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/17 21:30:01 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/19 18:38:39 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/19 20:14:06 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	show_stacks(char *com)
 
 	i = 100;
 	while (i-- > 1)
-		ft_printf("\n");
+		write(1, "\n", 1);
 	show_head();
 	if (t_v.l && ft_strcmp("  ", com))
 	{
@@ -57,7 +57,7 @@ int		wait_options(char *str, int i)
 	int j;
 
 	j = 0;
-	t_v.t = 75000000;
+	t_v.t = 60000000;
 	if (ft_isdigit(str[i + j]))
 	{
 		while (str[i + j] && ft_isdigit(str[i + j]))
