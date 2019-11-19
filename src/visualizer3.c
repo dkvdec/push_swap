@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 20:43:15 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/18 21:47:48 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/19 21:27:14 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	get_mark(void)
 	t_v.aai = -1;
 	t_v.bi = -1;
 	t_v.bbi = -1;
-	if ((!(ft_strcmp(t_v.c_c, "PA"))
-	|| !(ft_strcmp(t_v.c_c, "RRA"))) && t_a.sz_a > 1)
+	if (!(ft_strcmp(t_v.c_c, "PA")
+	|| (!(ft_strcmp(t_v.c_c, "RRA")) && t_a.sz_a > 1)))
 		t_v.ai = 0;
 	else if ((!(ft_strcmp(t_v.c_c, "PB"))
-	|| !(ft_strcmp(t_v.c_c, "RRB"))) && t_a.sz_b > 1)
+	|| (!(ft_strcmp(t_v.c_c, "RRB")) && t_a.sz_b > 1)))
 		t_v.bi = 0;
 	else if (!(ft_strcmp(t_v.c_c, "RRR")))
 	{

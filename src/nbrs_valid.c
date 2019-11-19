@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:43:03 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/17 20:29:34 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/19 21:18:18 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int		line_pass(char *str)
 		|| (str[i] == '-' && (str[i + 1] >= 48 && str[i + 1] <= 57)))
 		{
 			if (i > 0 && (str[i - 1] != ' ' && str[i] != ','))
-				end_error();
+				return (-1);
 			nb_c++;
 			i += ((str[i] == '-') ? 1 : 0);
 			if (nbr_check(str, &i))
@@ -85,7 +85,7 @@ int		count_nbrs(int f)
 	while (i < t_a.gc)
 	{
 		tmp = line_pass((*t_a.gv)[i]);
-		if (tmp < 0)
+		if (tmp <= 0)
 			return (-1);
 		else
 			nb_c += tmp;

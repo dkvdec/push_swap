@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 16:36:56 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/19 16:33:54 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/19 20:49:16 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,9 @@ int		main(int argc, char **argv)
 		check_dupl();
 		check_sort(1);
 		sort_core();
+		free(t_a.ar_a);
+		free(t_a.ar_b);
+		free(t_p.pr_a);
 	}
 	exit(0);
 }

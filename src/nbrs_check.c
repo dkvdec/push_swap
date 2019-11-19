@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 21:16:12 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/19 18:37:46 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/19 21:13:31 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ void	check_n_get_argv(int f)
 {
 	int i;
 
+	t_a.ar_a = NULL;
+	t_a.ar_b = NULL;
 	if (f)
 		f = check_options((*t_a.gv)[1], 0);
 	if ((t_a.sz_m = count_nbrs(f)) <= 0)
-		return (end_error());
+		end_error();
 	if (!(t_a.ar_a = (int*)malloc(sizeof(int) * t_a.sz_m))
 	|| !(t_a.ar_b = (int*)malloc(sizeof(int) * t_a.sz_m)))
 		return ;
