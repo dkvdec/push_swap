@@ -6,7 +6,7 @@
 #    By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/12 21:17:47 by dheredat          #+#    #+#              #
-#    Updated: 2019/11/18 20:52:36 by dheredat         ###   ########.fr        #
+#    Updated: 2019/11/19 18:39:42 by dheredat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRC	=	ch_act.c ch_act2.c ch_act3.c\
 		nbrs_check.c nbrs_valid.c\
 		tails.c\
 		solution.c price.c sort.c\
-		visualizer.c visualizer2.c visualizer3.c
+		visualizer.c visualizer2.c\
+		visualizer3.c visualizer4.c
 
 SRC_T		=	$(addprefix $(SRC_DIR)/,$(SRC))
 

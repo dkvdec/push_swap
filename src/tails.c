@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:38:29 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/13 16:57:32 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/19 18:37:23 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,47 @@ void	end_ok(void)
 void	end_ko(void)
 {
 	write(1, "KO\n", 3);
+	exit(0);
+}
+
+void	end_ok_v(void)
+{
+	show_ok();
+	show_stacks("FNL");
+	show_ok();
+	show_stacks("FNL");
+	show_ok();
+	show_stacks("FNL");
+	show_ok();
+	show_stacks("FNL");
+	show_ok();
+	show_stacks("FNL");
+	show_ok();
+	show_stacks("FNL");
+	show_ok();
+	show_stacks("FNL");
+	show_ok();
+	show_stacks("OK");
+	exit(0);
+}
+
+void	end_ko_v(void)
+{
+	show_ko();
+	show_stacks("FNL");
+	show_ko();
+	show_stacks("FNL");
+	show_ko();
+	show_stacks("FNL");
+	show_ko();
+	show_stacks("FNL");
+	show_ko();
+	show_stacks("FNL");
+	show_ko();
+	show_stacks("FNL");
+	show_ko();
+	show_stacks("FNL");
+	show_ko();
+	show_stacks("KO");
 	exit(0);
 }

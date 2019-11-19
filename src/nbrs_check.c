@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 21:16:12 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/18 19:37:47 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/19 18:37:46 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	check_sort(int flag)
 
 	i = 0;
 	if (t_a.sz_b > 0)
-		end_ko();
+		(t_v.v) ? end_ko_v() : end_ko();
 	while (i + 1 < t_a.sz_m)
 	{
 		if (t_a.ar_a[i] > t_a.ar_a[i + 1])
@@ -83,14 +83,14 @@ void	check_sort(int flag)
 			if (flag)
 				return ;
 			else
-				end_ko();
+				(t_v.v) ? end_ko_v() : end_ko();
 		}
 		i++;
 	}
 	if (flag)
 		exit(0);
 	else
-		end_ok();
+		(t_v.v) ? end_ok_v() : end_ok();
 }
 
 int		check_act(char *act)

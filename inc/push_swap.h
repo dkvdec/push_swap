@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:22:57 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/19 15:48:07 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/19 18:28:30 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ int			get_nbrs(int f);
 void		end_error(void);
 void		end_ok(void);
 void		end_ko(void);
+void		end_ok_v(void);
+void		end_ko_v(void);
 
 /*
 ** ADDITIONAL CHECK FUNCTIONS
@@ -152,5 +154,7 @@ void		show_stacks_core(char *com, void (*f)(int), int flag);
 void		reset_options(void);
 int			wait_options(char *str, int i);
 int			check_options(char *str, int i);
+void		show_ok(void);
+void		show_ko(void);
 
 #endif

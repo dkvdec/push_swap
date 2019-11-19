@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 16:08:49 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/19 16:21:20 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/19 18:34:55 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ void	read_act(void)
 	}
 	t_v.tail = tail;
 	get_n_check_act(tail);
+	free(tail);
 }
 
 int		main(int argc, char **argv)

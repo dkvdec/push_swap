@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 16:36:56 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/18 20:38:32 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/19 16:33:54 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ext_rotate(void)
 			max = i;
 		i++;
 	}
-	if (max < max - t_a.sz_b)
+	if (max < t_a.sz_b - max)
 		while (max-- > 0)
 			act_rb(1);
 	else
