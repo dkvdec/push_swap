@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 16:08:49 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/18 22:36:29 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/19 16:21:20 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,25 @@
 ** rrr : rra and rrb at the same time.									>>> 9
 */
 
+void	check_empty_act(char *str)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i + j] && str[i + j] != '\n')
+			j++;
+		if (j == 2 || j == 3)
+			i += j;
+		else
+			end_error();
+		i++;
+	}
+}
+
 void	get_n_check_act(char *tail)
 {
 	char	**act;
@@ -41,22 +60,17 @@ void	get_n_check_act(char *tail)
 
 	if (tail == NULL)
 		check_sort(0);
+	check_empty_act(tail);
 	act = ft_strsplit(tail, '\n');
+	t_v.act = act;
 	i = 0;
 	while (act[i])
 	{
-		if (check_act(act[i]))
+		if (act[i] == NULL || check_act(act[i]))
 			end_error();
 		i++;
 	}
 	spin_act(act);
-	i = 0;
-	while (act[i])
-	{
-		free(act[i]);
-		i++;
-	}
-	free(act);
 }
 
 void	read_act(void)
@@ -81,8 +95,8 @@ void	read_act(void)
 			free(tail);
 		tail = tmp;
 	}
+	t_v.tail = tail;
 	get_n_check_act(tail);
-	free(tail);
 }
 
 int		main(int argc, char **argv)

@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/17 21:30:01 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/18 21:39:02 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/18 23:12:43 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	show_stacks(char *com)
 
 	i = 100;
 	while (i-- > 1)
-		write(1, "\n", 1);
+		ft_printf("\n");
 	show_head();
 	if (t_v.l && ft_strcmp("  ", com))
 	{

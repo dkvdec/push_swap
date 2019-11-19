@@ -6,7 +6,7 @@
 /*   By: dheredat <dheredat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 20:22:57 by dheredat          #+#    #+#             */
-/*   Updated: 2019/11/18 20:52:03 by dheredat         ###   ########.fr       */
+/*   Updated: 2019/11/19 15:48:07 by dheredat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ struct		s_v{
 	int		aai;
 	int		bi;
 	int		bbi;
+	char	*tail;
+	char	**act;
 }			t_v;
 
 /*
